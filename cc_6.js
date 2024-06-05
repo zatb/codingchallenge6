@@ -30,3 +30,17 @@
             this.y += this.dy;
         }
     }
+//Use setInterval to continuously update the ball's position and redraw it on the canvas, creating the animation effect. Choose a suitable interval for smooth animation.
+    const canvas = document.getElementById('ballCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    const ball = new Ball(200, 160, 20, 2, 2, 'red');
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ball.draw(ctx);
+        ball.update(canvas);
+    }
+    
+    setInterval(animate, 10);
+    
